@@ -91,3 +91,10 @@
 - 退回 wiki（1 項）：slide-14 的主線「AI 越能幹，越需要讓人理解和控制」在 wiki 中沒有出處 → 在 trends/from-tools-to-agents 新增「三個階段的主線（綜合）」段落，並附上 Feng 的「越自主不代表越好」；slide-14 同時加上這一點
 - 重跑：lint_wiki PASS、check_drafts PASS，並重新渲染
 - 觀察：腳本關卡全部通過的稿子，審查仍找到 13 個問題，其中 9 個是「保留語氣被拿掉」或「說得太滿」，這類問題規則式腳本檢查不到
+
+## [2026-11-23] lint | workflow 修改：把檢查往前移
+- lint_wiki.py：trends/ 也檢查段落出處；concept 頁缺少新手定義、百分比沒附頁碼，都會發出警告（原本是人工檢查）
+- check_drafts.py：新增絕對化用詞警告，對應 AI 審查第 1 輪最常見的問題
+- check_outline.py：修正 `cards:` 留空時吃掉下一行的 bug
+- 新檢查第一次跑就抓到 3 個警告：slide-09「最重要」（作者自己的判斷，已改）、slide-13「一定」（已改成 wiki 用的「必要條件」）、slide-11「一定不可逆」（是 wiki 原本的分類名稱，屬於誤報，保留）
+- workflows/topic-slides.md 新增「修改紀錄」表

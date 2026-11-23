@@ -34,7 +34,7 @@ def main(slug: str) -> int:
     cards = {c.stem for c in (d / "cards").glob("*.md")}
     used: set[str] = set()
     for n, body in slides:
-        m = re.search(r"^cards:\s*(.*)$", body, re.M)
+        m = re.search(r"^cards:[ \t]*(.*)$", body, re.M)
         ids = [x.strip() for x in m.group(1).split(",") if x.strip()] if m else []
         if n != 1 and not ids:
             r.err(f"slide {n}: 沒有對應卡片（cards: 那行）")

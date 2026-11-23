@@ -6,6 +6,7 @@
 3. concepts/ 和 debates/ 頁面至少引用一篇論文
 4. 每個頁面都列在 index.md
 5. 孤兒頁（沒有任何頁面連到它）→ 警告
+7.（2026-11-23 新增，把人工檢查前移）trends/ 段落沒出處、concept 缺新手定義、百分比沒附頁碼 → 警告
 6. log.md 每篇已 ingest 的論文都有紀錄
 """
 from __future__ import annotations
@@ -62,7 +63,12 @@ def main() -> int:
                 r.err(f"{rel}: 主要發現沒有任何頁碼或章節標記")
             if f"| {p.stem}" not in log_text and f"|{p.stem}" not in log_text:
                 r.err(f"{rel}: log.md 沒有這篇的 ingest 紀錄")
-        elif rel.startswith(("concepts/", "debates/")):
+        if rel.startswith("concepts/") and "**一句話定義（給新手）**" not in body:
+            r.warn(f"{rel}: 缺少給新手的「一句話定義」")
+        for line in body.splitlines():
+            if re.search(r"\d+(?:\.\d+)?\s*%", line) and not re.search(r"p\.\s*\d|§\s*\d", line):
+                r.warn(f"{rel}: 百分比沒有附頁碼 → {line.strip()[:30]}…")
+        if rel.startswith(("concepts/", "debates/", "trends/")):
             if not re.search(r"\[\[papers/", body):
                 r.err(f"{rel}: 沒有引用任何論文")
             # 有內容但沒出處的段落

@@ -117,6 +117,14 @@ sources: papers/feng2025-levels-of-autonomy, concepts/autonomy-levels
 沒有問題就寫「全部通過」。不要自己動手修改任何檔案。
 ```
 
+## 修改紀錄（2026-11-23，第一次實際執行後）
+| 發現的問題 | 原本在哪裡被抓到 | 前移到 |
+|---|---|---|
+| 「一句話」摘要和定義句沒有出處；trends 頁不在腳本的檢查範圍內 | ingest 後人工檢查 | `lint_wiki.py`：trends 段落、concept 定義、百分比沒附頁碼都改成警告 |
+| 投影片說得太滿（處處、最常、最危險） | 節點 4 之後的 AI 審查（13 項中有 9 項屬於這類） | `check_drafts.py`：絕對化用詞改成警告，在送審查之前就先處理 |
+| 大綱 `cards:` 留空時，腳本把下一行誤當成卡片名稱 | 節點 3 | 修正 `check_outline.py` 的正規表示式 |
+| 主線結論在 wiki 中沒有出處 | AI 審查 | 規則：簡報的總結如果是跨頁歸納，必須先在 trend 頁寫成「綜合：…」段落（退回 wiki，不是退回節點 4） |
+
 ## 一鍵跑全部檢查
 ```
 python scripts/run_checks.py <slug>

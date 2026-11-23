@@ -18,6 +18,7 @@ LAYOUTS = {"title", "bullets", "compare", "quote"}
 MAX_BULLET = 70
 MAX_BULLETS = 6
 MAX_TOTAL = 360
+ABSOLUTE_WORDS = ["處處", "唯一", "一定", "絕對", "全部", "所有人", "最危險", "最重要", "最常", "必然"]
 NUM_RE = re.compile(r"\d+(?:\.\d+)?\s*%|\b\d{2,}(?:\.\d+)?\b")
 
 
@@ -69,6 +70,12 @@ def main(slug: str) -> int:
         total = sum(visual_len(l) for l in lines)
         if total > MAX_TOTAL:
             r.err(f"{tag}: 整頁太長（{total} > {MAX_TOTAL}）")
+
+        # 2026-11-23 新增：AI 審查第 1 輪最常見的問題是「說得太滿」，把它前移成警告
+        for l in body.splitlines():
+            for w in ABSOLUTE_WORDS:
+                if w in l and "之一" not in l:
+                    r.warn(f"{tag}: 絕對化用詞「{w}」→ 確認 wiki 原文有沒有保留語氣")
 
         # 數字要能在引用頁面找到
         src_text = "".join(read(WIKI / f"{s}.md") for s in sources if wiki_page_exists(s))

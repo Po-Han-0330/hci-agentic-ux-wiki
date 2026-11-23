@@ -4,8 +4,8 @@ title: 討論：人要監督 agent 到什麼程度？
 layout: compare
 sources: debates/how-much-human-oversight, papers/bansal2024-human-agent-communication, papers/feng2025-levels-of-autonomy
 ---
-### 立場 A：一定要能驗證（Bansal）
-- 驗證是有效溝通的必要條件
+### 立場 A：驗證是必要條件（Bansal）
+- 使用者要能驗證 agent 的行為
 - 否則無法避免代價高的錯誤
 ### 立場 B：有時介入反而更糟（Feng）
 - 前提：多數情況下 L5 風險可能大於效益

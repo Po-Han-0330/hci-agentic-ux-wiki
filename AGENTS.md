@@ -168,10 +168,10 @@ lint 的結果**只列警告，不擋 commit**。不過腳本回報的 `✗` 項
 | 斷掉的 `[[連結]]` | 腳本 |
 | 孤兒頁（沒有其他頁面連到它） | 腳本 |
 | 頁面沒有列在 `index.md` | 腳本 |
-| 沒有出處的段落 | 腳本（concepts/、debates/）；trends/ 由 agent 人工檢查 |
+| 沒有出處的段落 | 腳本（concepts/、debates/、trends/） |
 | paper 頁缺 frontmatter 或必要段落 | 腳本 |
-| 數字或直接引述沒附頁碼 | agent 人工檢查 |
-| concept 頁缺給新手的一句話定義 | agent 人工檢查 |
+| 數字或直接引述沒附頁碼 | 百分比由腳本檢查（警告）；其他數字和引述由 agent 人工檢查 |
+| concept 頁缺給新手的一句話定義 | 腳本（警告） |
 | 簡報引用的 wiki 頁不存在 | `scripts/check_drafts.py`（簡報階段） |
 
 每次 lint 都要在 `log.md` 記一筆 `## [YYYY-MM-DD] lint | PASS/FAIL`，寫出找到什麼問題、怎麼修。作業的「檢查紀錄」和反思會用到這些紀錄。
