@@ -1,0 +1,5 @@
+__pycache__/
+.DS_Store
+.venv/
+# PDF 太大可選擇不進 git（老師要看的話把這行刪掉）
+# raw/*.pdf
