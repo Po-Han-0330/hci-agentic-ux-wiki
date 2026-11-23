@@ -80,3 +80,14 @@
 - render_deck.py → out/ai-interface-shift/deck.html（14 頁）
 - run_checks.py：全部關卡 PASS；沒有安裝 Playwright，所以沒做真實溢出檢查
 - 尚未完成：獨立 AI 審查（workflow 規定要在新對話中進行，作者不能審自己的作品）
+
+## [2026-11-23] slides | ai-interface-shift（AI 審查第 1 輪 → 修正）
+- 獨立審查（新對話，只能看 drafts、sources.md 和被引用的 18 個 wiki 頁）→ 13 項問題，記錄在 out/ai-interface-shift/review.md
+- 作者逐項對照 wiki，13 項都成立
+- 退回節點 4（12 項）：
+  - 說得太滿：slide-04「處處適用」、「最常做不到」，備註提到 wiki 沒寫的 G9；slide-05 評估鴻溝少了「可能」；slide-06 備註「最危險」；slide-12「使用者抱怨」少了「部分」；slide-12 把不同題目集的數字並排；slide-13 漏了 Feng「多數情況下 L5 風險可能大於效益」這個前提
+  - 缺細節或出處：slide-01 只引用了階段三；slide-10 的 L4 漏了「卡關」這個條件
+  - 覆蓋率：concepts/human-in-the-loop 沒有被任何一頁引用 → 加到 slide-11；trends/autonomy-as-design-choice 加到 slide-10
+- 退回 wiki（1 項）：slide-14 的主線「AI 越能幹，越需要讓人理解和控制」在 wiki 中沒有出處 → 在 trends/from-tools-to-agents 新增「三個階段的主線（綜合）」段落，並附上 Feng 的「越自主不代表越好」；slide-14 同時加上這一點
+- 重跑：lint_wiki PASS、check_drafts PASS，並重新渲染
+- 觀察：腳本關卡全部通過的稿子，審查仍找到 13 個問題，其中 9 個是「保留語氣被拿掉」或「說得太滿」，這類問題規則式腳本檢查不到

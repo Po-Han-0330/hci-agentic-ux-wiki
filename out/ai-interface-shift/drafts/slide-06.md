@@ -9,4 +9,4 @@ sources: concepts/gulf-of-envisioning, papers/subramonyam2024-gulf-of-envisionin
 - **意圖性缺口**：不知道結果好不好，只好全盤接受
 - 例：只打「寫一段祝酒詞」，得到的往往很平庸
 - 反覆修改 prompt，又容易被第一個結果綁住
-> notes: 第三個缺口最危險：沒有自己的標準，就容易過度依賴 AI。
+> notes: 第三個缺口的影響是：沒有自己的標準，就容易過度依賴 AI。

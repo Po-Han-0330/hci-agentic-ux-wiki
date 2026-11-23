@@ -23,6 +23,10 @@ agent 是能自主感知環境並採取行動的系統。今天的 agent 可以�
 - 能力越強，失敗的代價越高：agent 可能亂花錢、洩漏個資、刪掉重要檔案（[[papers/bansal2024-human-agent-communication]] p.2），而且規劃能力有限、會產生幻覺，行為無法完全預期（[[papers/bansal2024-human-agent-communication]] p.4）。
 - 讓人確認每一步太累，完全不確認又太危險。這個「介入多少」的取捨還沒有答案（[[papers/bansal2024-human-agent-communication]] p.8）。
 
+## 三個階段的主線（綜合）
+
+AI 的能力從「給建議」（[[papers/amershi2019-guidelines]] p.1–3）、「依自然語言生成」（[[papers/subramonyam2024-gulf-of-envisioning]] p.1–3）擴大到「替人行動」（[[papers/bansal2024-human-agent-communication]] p.2）。每往前一步，研究者都提出新的機制，讓人能理解和控制 AI，因為失敗的代價也跟著升高（綜合：[[papers/amershi2019-guidelines]] p.3、[[papers/subramonyam2024-gulf-of-envisioning]] p.11–12、[[papers/bansal2024-human-agent-communication]] p.2、[[papers/mozannar2025-magentic-ui]] p.2）。但這不代表能力越強就一定要越自主：自主性是可以另外決定的設計選項，越自主不代表越好（[[papers/feng2025-levels-of-autonomy]] p.2、p.9）。
+
 ## 對設計者的意義
 
 在 agent 行動的「之前、執行中、之後」都要設計溝通：事前說明計畫、執行中顯示進度並可以叫停、事後回報副作用和結果（[[papers/bansal2024-human-agent-communication]] p.15–19）。這延續了 [[trends/designing-for-uncertainty]]，但風險從「建議錯了」升級成「做錯了事」（綜合：[[papers/amershi2019-guidelines]]、[[papers/bansal2024-human-agent-communication]]）。具體做法可以參考 Magentic-UI 的共同規劃和動作守門（[[papers/mozannar2025-magentic-ui]] p.5–7、p.14）。相關概念：[[concepts/common-ground]]、[[concepts/human-in-the-loop]]、[[concepts/co-planning]]、[[concepts/action-guards]]。

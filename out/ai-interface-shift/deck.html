@@ -29,7 +29,7 @@ body.show-notes .notes{display:block}
 </style></head><body><div class="stage"><section class="slide layout-title" data-slide="1"><div class="inner"><div class="title-wrap"><p class="kicker">HCI · AI-Native 介面與 Agentic UX</p><h1>AI 介面正在發生什麼改變？</h1><p>從工具到 Agent 的設計趨勢</p>
 <ul>
 <li>階段一：AI 會出錯 → 階段二：AI 會生成 → 階段三：AI 會行動</li>
-</ul></div></div><footer class="cite">出處：trend: from-tools-to-agents</footer><div class="pageno">1 / 14</div><aside class="notes">這份簡報用 5 篇 HCI 論文，說明 AI 介面設計的三個階段，以及每個階段為什麼會出現新的設計問題。</aside></section>
+</ul></div></div><footer class="cite">出處：trend: designing-for-uncertainty、trend: from-commands-to-intent、trend: from-tools-to-agents</footer><div class="pageno">1 / 14</div><aside class="notes">這份簡報用 5 篇 HCI 論文，說明 AI 介面設計的三個階段，以及每個階段為什麼會出現新的設計問題。</aside></section>
 <section class="slide layout-compare" data-slide="2"><div class="inner"><h2>先備知識：Norman 的兩個鴻溝</h2><div class="compare"><div class="col"><h3>執行鴻溝</h3><ul>
 <li>「我想做的事」和「系統讓我做得到的操作」的距離</li>
 <li>鴻溝越大，使用者要花的力氣越多</li>
@@ -47,14 +47,15 @@ body.show-notes .notes{display:block}
 <section class="slide layout-bullets" data-slide="4"><div class="inner"><h2>設計回應：18 條人機互動準則</h2><div class="body"><ul>
 <li>從 168 條散落的建議，整理成 <strong>18 條</strong>準則</li>
 <li>依時機分四組：一開始、互動中、出錯時、長期使用</li>
-<li>49 位實務者在 20 個產品上實測，處處適用</li>
-<li>最常做不到的一條：<strong>說明 AI 為什麼這樣做</strong></li>
+<li>49 位實務者在 20 個產品實測：適用範圍很廣</li>
+<li>例外：語音等沒有畫面的產品較難套用</li>
+<li>最常做不到的之一：<strong>說明 AI 為什麼這樣做</strong></li>
 <li>啟示：要事先設計「AI 做錯時」怎麼忽略、修正</li>
-</ul></div></div><footer class="cite">出處：amershi2019-guidelines、concept: explainability</footer><div class="pageno">4 / 14</div><aside class="notes">例如 G1「讓使用者知道系統能做什麼」、G9「方便修正」、G11「讓使用者知道為什麼」。這是後面所有論文的打底。</aside></section>
+</ul></div></div><footer class="cite">出處：amershi2019-guidelines、concept: explainability</footer><div class="pageno">4 / 14</div><aside class="notes">例如 G1「讓使用者知道系統能做什麼」、G7–G10「出錯時方便忽略、修正」、G11「讓使用者知道為什麼」。這是後面所有論文的打底。</aside></section>
 <section class="slide layout-bullets" data-slide="5"><div class="inner"><h2>階段二：從「下指令」到「說意圖」</h2><div class="body"><ul>
 <li>ChatGPT 這類 LLM：沒有固定功能，輸入什麼都可以</li>
 <li>不用學操作，說出想要什麼就好 → <strong>執行鴻溝變小</strong></li>
-<li>但輸出每次不同、很難判斷好壞 → 評估鴻溝變大</li>
+<li>但輸出每次不同、很難判斷好壞 → 評估鴻溝<strong>可能</strong>變大</li>
 <li>還多了一個新難題：<strong>想像鴻溝</strong></li>
 </ul></div></div><footer class="cite">出處：subramonyam2024-gulf-of-envisioning、trend: from-commands-to-intent</footer><div class="pageno">5 / 14</div><aside class="notes">想像鴻溝是 Subramonyam 等人（CHI 2024）提出的：從心裡模糊的想法，到寫出一個能讓 AI 做出好結果的 prompt，中間的距離。</aside></section>
 <section class="slide layout-bullets" data-slide="6"><div class="inner"><h2>想像鴻溝的三個缺口</h2><div class="body"><ul>
@@ -63,7 +64,7 @@ body.show-notes .notes{display:block}
 <li><strong>意圖性缺口</strong>：不知道結果好不好，只好全盤接受</li>
 <li>例：只打「寫一段祝酒詞」，得到的往往很平庸</li>
 <li>反覆修改 prompt，又容易被第一個結果綁住</li>
-</ul></div></div><footer class="cite">出處：concept: gulf-of-envisioning、subramonyam2024-gulf-of-envisioning</footer><div class="pageno">6 / 14</div><aside class="notes">第三個缺口最危險：沒有自己的標準，就容易過度依賴 AI。</aside></section>
+</ul></div></div><footer class="cite">出處：concept: gulf-of-envisioning、subramonyam2024-gulf-of-envisioning</footer><div class="pageno">6 / 14</div><aside class="notes">第三個缺口的影響是：沒有自己的標準，就容易過度依賴 AI。</aside></section>
 <section class="slide layout-bullets" data-slide="7"><div class="inner"><h2>設計回應：幫使用者把意圖想清楚</h2><div class="body"><ul>
 <li>當「prompt 引導者」：主動問「你的讀者是誰？」</li>
 <li>提供 prompt 範例和建議，降低開頭的門檻</li>
@@ -89,10 +90,10 @@ body.show-notes .notes{display:block}
 <li>L1 操作者：人主導，agent 被叫才幫忙</li>
 <li>L2 協作者：一起規劃、分工，人可以隨時接手</li>
 <li>L3 顧問：agent 主導，需要時才問人</li>
-<li>L4 批准者：只有重大動作才找人批准</li>
+<li>L4 批准者：卡關（如要密碼）或重大動作才找人</li>
 <li>L5 觀察者：完全自主，人只能看紀錄和按停止</li>
 <li><strong>越自主不代表越好</strong>：要在效用、責任、成本間取捨</li>
-</ul></div></div><footer class="cite">出處：feng2025-levels-of-autonomy、concept: levels-of-autonomy</footer><div class="pageno">10 / 14</div><aside class="notes">Feng 等人（2025）強調，自主性是設計決定，和 agent 的能力是兩回事。能力很強的 agent 也可以被設計成每一步都先問人。</aside></section>
+</ul></div></div><footer class="cite">出處：feng2025-levels-of-autonomy、concept: levels-of-autonomy、trend: autonomy-as-design-choice</footer><div class="pageno">10 / 14</div><aside class="notes">Feng 等人（2025）強調，自主性是設計決定，和 agent 的能力是兩回事。能力很強的 agent 也可以被設計成每一步都先問人。</aside></section>
 <section class="slide layout-compare" data-slide="11"><div class="inner"><h2>實例：Magentic-UI 怎麼把人放進迴路</h2><div class="compare"><div class="col"><h3>共同規劃（co-planning）</h3><ul>
 <li>動手前先列出步驟計畫</li>
 <li>使用者直接修改，按確認才開始</li>
@@ -101,28 +102,30 @@ body.show-notes .notes{display:block}
 <li>一定不可逆（上傳檔案）：請人批准</li>
 <li>可能不可逆（點按鈕）：交給 LLM 判斷</li>
 <li>不會不可逆（捲動頁面）：直接做</li>
-</ul></div></div></div><footer class="cite">出處：mozannar2025-magentic-ui、concept: co-planning、concept: action-guards</footer><div class="pageno">11 / 14</div><aside class="notes">Magentic-UI 是 Microsoft 的開源 agent 介面，一共有 6 種機制，還有共同執行、答案驗證、記憶、多工。</aside></section>
+</ul></div></div></div><footer class="cite">出處：mozannar2025-magentic-ui、concept: co-planning、concept: action-guards、concept: human-in-the-loop</footer><div class="pageno">11 / 14</div><aside class="notes">「人在迴路中」（human-in-the-loop）是指在關鍵時刻讓人確認、批准、插手。Magentic-UI 是 Microsoft 的開源 agent 介面，一共有 6 種機制，還有共同執行、答案驗證、記憶、多工。</aside></section>
 <section class="slide layout-bullets" data-slide="12"><div class="inner"><h2>證據：人參與的效果與代價</h2><div class="body"><ul>
-<li>agent 自己做：GAIA 正確率 42.52%，人類是 92%</li>
-<li>有模擬使用者幫忙：正確率從 30.3% 升到 51.9%</li>
+<li>自己做（GAIA 測試集）：42.52%，人類 92%</li>
+<li>有人幫忙（另一組驗證集）：30.3% → 51.9%</li>
 <li>而且 agent 只在 10% 的任務裡求助</li>
-<li>但使用者也抱怨：確認請求太多、紀錄太長看不完</li>
+<li>但<strong>部分</strong>使用者覺得：確認太多、紀錄太長</li>
 <li>只看最終答案常常不夠，還要回頭看過程</li>
-</ul></div></div><footer class="cite">出處：mozannar2025-magentic-ui</footer><div class="pageno">12 / 14</div><aside class="notes">30.3% 和 42.52% 是不同的測試集，所以兩個數字不能直接比。模擬使用者是 LLM 扮演的，作者也承認還沒測量真實的生產力。</aside></section>
+</ul></div></div><footer class="cite">出處：mozannar2025-magentic-ui</footer><div class="pageno">12 / 14</div><aside class="notes">42.52% 是測試集、30.3% 是驗證集，題目不同，兩個數字不能直接比；要比的是同一組題目裡「有人幫忙」前後的差異。模擬使用者是 LLM 扮演的，作者也承認還沒測量真實的生產力。</aside></section>
 <section class="slide layout-compare" data-slide="13"><div class="inner"><h2>討論：人要監督 agent 到什麼程度？</h2><div class="compare"><div class="col"><h3>立場 A：一定要能驗證（Bansal）</h3><ul>
 <li>驗證是有效溝通的必要條件</li>
 <li>否則無法避免代價高的錯誤</li>
 </ul></div><div class="col"><h3>立場 B：有時介入反而更糟（Feng）</h3><ul>
-<li>資訊極度複雜時，人可能帶來錯誤</li>
-<li>封閉沙盒裡，L5 也許合理</li>
-</ul></div></div></div><footer class="cite">出處：debate: how-much-human-oversight、bansal2024-human-agent-communication、feng2025-levels-of-autonomy</footer><div class="pageno">13 / 14</div><aside class="notes">兩方都同意：高代價、不可逆的動作要由人把關。真正的分歧在「複雜但只在封閉環境中的任務」。Magentic-UI 的證據顯示人的參與有效，但也有成本。留給大家討論：你會想用哪一級的 agent？</aside></section>
+<li>前提：多數情況下 L5 風險可能大於效益</li>
+<li>但資訊極度複雜時，人可能帶來錯誤</li>
+<li>封閉沙盒裡，L5 也許合理（推論）</li>
+</ul></div></div></div><footer class="cite">出處：debate: how-much-human-oversight、bansal2024-human-agent-communication、feng2025-levels-of-autonomy</footer><div class="pageno">13 / 14</div><aside class="notes">兩方都同意：高代價、不可逆的動作要由人把關。真正的分歧在「複雜但只在封閉環境中的任務」。Magentic-UI 的證據顯示人的參與有效，但也有成本。注意：兩篇都是立場或分析型論文，都沒有實證數據。留給大家討論：你會想用哪一級的 agent？</aside></section>
 <section class="slide layout-bullets" data-slide="14"><div class="inner"><h2>總結：三個階段，一條主線</h2><div class="body"><ul>
 <li>會出錯的 AI → 設定預期、解釋原因、讓人修正</li>
 <li>會生成的 AI → 幫人把意圖想清楚、說清楚</li>
 <li>會行動的 AI → 共同規劃、動作守門、選對自主等級</li>
 <li>主線：<strong>AI 越能幹，越需要讓人理解和控制</strong></li>
+<li>但能力 ≠ 自主：越自主不代表越好</li>
 <li>還沒解決：人要介入多少？由誰、怎麼決定？</li>
-</ul></div></div><footer class="cite">出處：trend: designing-for-uncertainty、trend: from-commands-to-intent、trend: from-tools-to-agents、trend: autonomy-as-design-choice</footer><div class="pageno">14 / 14</div><aside class="notes">回到 Norman 的兩個鴻溝：AI 讓「怎麼做」變簡單，但「想清楚要什麼」和「確認做對了沒」變得更重要。</aside></section></div><div class="progress"></div><script>
+</ul></div></div><footer class="cite">出處：trend: designing-for-uncertainty、trend: from-commands-to-intent、trend: from-tools-to-agents、trend: autonomy-as-design-choice、feng2025-levels-of-autonomy</footer><div class="pageno">14 / 14</div><aside class="notes">回到 Norman 的兩個鴻溝：AI 讓「怎麼做」變簡單，但「想清楚要什麼」和「確認做對了沒」變得更重要。</aside></section></div><div class="progress"></div><script>
 const slides=[...document.querySelectorAll('.slide')];let i=0;
 function fit(){const s=Math.min(innerWidth/1280,innerHeight/720)*0.96;slides.forEach(el=>el.style.transform=`scale(${s})`)}
 function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));
