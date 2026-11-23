@@ -1,0 +1,11 @@
+---
+paper: bansal2024-human-agent-communication
+---
+- 今天的 agent 能上網、呼叫 API、執行程式碼，替人訂機票、購物 [來源: papers/bansal2024-human-agent-communication p.2]
+- 兩項技術進展造成這個轉變：生成式基礎模型和工具使用 [來源: papers/bansal2024-human-agent-communication p.3]
+- 能力變強，失敗的代價也變高：亂花錢、洩漏個資、刪掉檔案 [來源: papers/bansal2024-human-agent-communication p.2]
+- 關鍵是建立共同基礎：人和 agent 對目標和計畫有一致的理解 [來源: papers/bansal2024-human-agent-communication p.2]
+- 12 個溝通挑戰分布在互動的之前、執行中、之後 [來源: papers/bansal2024-human-agent-communication p.1]
+- 高代價動作（花錢、不可逆）要先取得使用者許可 [來源: papers/bansal2024-human-agent-communication p.15]
+- 讓使用者能驗證 agent 的行為，是有效溝通的必要條件 [來源: papers/bansal2024-human-agent-communication p.7]
+- 細節要拿捏：太少無法驗證，太多會造成負擔 [來源: papers/bansal2024-human-agent-communication p.8]
